@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership - LiftBuddy Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblebody+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="member_stylesheet.css">
+    <script src="membership.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">LiftBuddy Fitness</div>
+        <nav class="nav-links">
+            <a href="index.html">About</a>
+            <a href="membership.html">Membership</a>
+            <a href="classes.html">Classes</a>
+
+        </nav>
+    </header>
+
+    <section class="membership-container">
+        <div class="membership-plan">
+            <h2>$30 / Monthly</h2>
+            <img src="regis.jpg" alt="Basic Plan" class="plan-image">
+            <button onclick="openForm()">Buy Plan</button>
+        </div>
+
+        <div class="membership-plan">
+            <h2>$50 / Monthly</h2>
+            <img src="colorfulkettlebell.jpg" alt="Premium Plan" class="plan-image">
+            <button onclick="openForm()">Buy Plan</button>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <div class="registration-form">
+        <!-- Step 1: General Info -->
+        <div class="form-step" id="step1">
+            <h2>Lets Make You A Membership</h2>
+            <form id="membershipForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                <small id="name-error" class="error-message"></small>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <small id="dob-error" class="error-message"></small>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+                <small id="email-error" class="error-message"></small>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
+                <small id="phone-error" class="error-message"></small>
+
+                <button onclick="nextStep(2)">Next</button>
+            </form>
+        </div>
+    
+        <!-- Step 2: Payment Details -->
+        <div class="form-step" id="step2" style="display: none;">
+            <h2>Payment Details</h2>
+            <label for="card">Credit Card Number:</label>
+            <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456" required>
+    
+            <label for="exp">Expiration Date:</label>
+            <input type="text" id="exp" name="exp" placeholder="MM/YY" required>
+    
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+    
+            <button onclick="prevStep(1)">Back</button>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+    
+
+</body>
+</html>
